@@ -1,0 +1,9 @@
+FROM centos:7 as base
+
+# Install updates, requirements, and clean up
+RUN yum update -y && yum clean all
+
+# The Centos from Docker Hub is one layer so be might as well apply updates and rebase it.
+FROM scratch
+COPY --from=base / /
+
