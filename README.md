@@ -1,10 +1,8 @@
 These a set of base containers for Centos.   Building them is fairly simple.
 
-Centos containers:
-
 checkout this repo:
 
-`git clone https://github.com/ssilbory/base_containers.git1
+`git clone https://github.com/ssilbory/base_containers.git1`
 
 Build base centos image:
 
