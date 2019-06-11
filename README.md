@@ -1,4 +1,4 @@
-These a set of base containers for Centos.   Building them is fairly simple.
+These are a set of base containers for Centos, and some additional images with newer versions of Tomcat and Openjdk. Building them is fairly simple.
 
 checkout this repo:
 
