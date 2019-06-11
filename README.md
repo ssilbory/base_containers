@@ -4,15 +4,15 @@ checkout this repo:
 
 `git clone https://github.com/ssilbory/base_containers.git1`
 
-Build base centos image:
+Build base Centos image:
 
 `docker build -f Dockerfile.centos.base -t centos-nova-base:7 .`
 
-Build http/php image:
+Build Centos http/php image:
 
 `docker build -f Dockerfile.centos.http -t centos-nova-http:7 .`
 
-Build tomcat image:
+Build Centos tomcat image:
 
 `docker build -f Dockerfile.centos.tomcat -t centos-nova-tomcat:7 .`
 
