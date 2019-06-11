@@ -24,4 +24,4 @@ Build tomcat containers:
 
 `docker build -f Dockerfile.tomcat8 -t  tomcat-nova:8 .`
 
-Note that if you are planning on just running java the centos-nova-tomcat or the tomcat-nova images should be used to save space.  (Most of the tomcat images are just java, and it's deps.)
+Note that if you are planning on just running java the centos-nova-tomcat or the tomcat-nova images should be used to save space.  Most of the tomcat images are just java, and it's deps, which means a jdk image will just end up costing you more space.
