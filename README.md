@@ -2,7 +2,7 @@ These are a set of base containers for Centos, and some additional images with n
 
 checkout this repo:
 
-`git clone https://github.com/ssilbory/base_containers.git1`
+`git clone https://github.com/ssilbory/base_containers.git`
 
 Build base Centos image:
 
