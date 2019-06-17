@@ -1,0 +1,5 @@
+FROM centos-nova-base:7
+
+# Install updates, requirements, and clean up
+RUN yum update -y && yum install -y java-1.8.0-openjdk && yum clean all
+

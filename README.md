@@ -16,12 +16,9 @@ Build Centos tomcat image:
 
 `docker build -f Dockerfile.centos.tomcat -t centos-nova-tomcat:7 .`
 
-Build tomcat containers:
+Build alternate Centos tomcat images 
+docker build -f Dockerfile.centos.java8 -t centos-nova-java8:7 .
+docker build -f Dockerfile.centos.tomcat8 -t centos-nova-tomcat8:7 .
+docker build -f Dockerfile.centos.tomcat9 -t centos-nova-tomcat9:7 .
 
-`docker build -f Dockerfile.tomcat9.jre11 -t tomcat-nova:9-jre11 .`
-
-`docker build -f Dockerfile.tomcat9 -t tomcat-nova:9 .`
-
-`docker build -f Dockerfile.tomcat8 -t  tomcat-nova:8 .`
-
-Note that if you are planning on just running java the centos-nova-tomcat or the tomcat-nova images should be used to save space.  Most of the tomcat images are just java, and it's deps, which means a jdk image will just end up costing you more space.
+Note that if you are planning on just running java the centos-nova-tomcat or the centos-nova-java8 should be used to save space.  The tomcat images are mostly just java, and it's deps, which means a jdk image will just end up costing you more space.  The centos-nova-java8 image was created primarily to share java8 installation between the centos-nova-tomcat8 and centos-nova-tomcat9 images.

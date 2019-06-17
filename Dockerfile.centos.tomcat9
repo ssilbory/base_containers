@@ -1,0 +1,25 @@
+FROM centos-nova-java8:7
+
+RUN useradd -M -s /bin/nologin -d /opt/tomcat tomcat 
+
+# Really you might want to cache a copy of the tomcat binary, and regularly update it
+RUN yum install -y wget &&\
+  wget http://www-us.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz &&\
+  mkdir /opt/tomcat &&\
+  tar  --strip-components=1 -xf apache-tomcat-*.tar.gz -C /opt/tomcat &&\
+  rm -f apache-tomcat-*.tar.gz &&\
+  chgrp -R tomcat /opt/tomcat &&\
+  cd /opt/tomcat &&\
+  chmod -R g+r conf &&\
+  chmod g+x conf &&\
+  chown -R tomcat webapps/ work/ temp/ logs/ &&\
+  yum -y remove wget && yum clean all
+  
+
+
+
+# This is mostly a hint to docker and only works if you use -P.
+# Really you should be using -p 8080:8080 when testing with docker.
+EXPOSE 8080
+
+CMD /opt/tomcat/bin/catalina.sh run
