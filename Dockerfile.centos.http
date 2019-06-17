@@ -4,7 +4,7 @@ FROM centos-nova-base:7
 RUN yum update -y && yum install -y php http && yum clean all
 
 #Build a simple wrapper script
-RUN echo 'source /etc/sysconfig/httpd ;/usr/sbin/httpd $OPTIONS -DFOREGROUND' >/run_https.sh && chmod 755 /run_https.sh
+RUN echo 'source /etc/sysconfig/httpd ;/usr/sbin/httpd $OPTIONS -DFOREGROUND $*' >/run_https.sh && chmod 755 /run_https.sh
 
 # This is mostly a hint to docker and only works if you use -P.
 # Really you should be using -p 80:80 when testing with docker.
