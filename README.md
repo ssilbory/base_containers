@@ -16,7 +16,7 @@ Build Centos tomcat image:
 
 `docker build -f Dockerfile.centos.tomcat -t centos-nova-tomcat:7 .`
 
-Build alternate Centos tomcat images: 
+Build alternate Centos tomcat images: (Note that java 8 exists primarily to share layers between tomcat containers.)
 
 `docker build -f Dockerfile.centos.java8 -t centos-nova-java8:7 .`
 
